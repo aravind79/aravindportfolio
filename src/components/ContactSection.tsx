@@ -9,6 +9,7 @@ const WHATSAPP_NUMBER = "917907021813";
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
   email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  phone: z.string().trim().min(1, "Phone number is required").max(20, "Phone must be less than 20 characters").regex(/^[+]?[\d\s-]+$/, "Invalid phone number"),
   message: z.string().trim().min(1, "Message is required").max(1000, "Message must be less than 1000 characters"),
 });
 
@@ -18,6 +19,7 @@ export const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -42,12 +44,12 @@ export const ContactSection = () => {
     
     // Open WhatsApp with the message
     const whatsappMessage = encodeURIComponent(
-      `Hi Aravind!\n\nName: ${result.data.name}\nEmail: ${result.data.email}\n\nMessage:\n${result.data.message}`
+      `Hi Aravind!\n\nName: ${result.data.name}\nEmail: ${result.data.email}\nPhone: ${result.data.phone}\n\nMessage:\n${result.data.message}`
     );
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`, "_blank");
     
     toast.success("Opening WhatsApp to send your message!");
-    setFormData({ name: "", email: "", message: "" });
+    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   const handleWhatsAppDirect = () => {
@@ -199,18 +201,33 @@ export const ContactSection = () => {
                 {errors.name && <p className="text-destructive text-xs mt-1">{errors.name}</p>}
               </div>
 
-              <div>
-                <label className="block text-sm font-medium mb-2">Email</label>
-                <input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className={`w-full px-4 py-3 rounded-xl bg-muted/50 border ${errors.email ? 'border-destructive' : 'border-border/50'} focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-sm md:text-base`}
-                  placeholder="your@email.com"
-                  maxLength={255}
-                />
-                {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium mb-2">Email</label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className={`w-full px-4 py-3 rounded-xl bg-muted/50 border ${errors.email ? 'border-destructive' : 'border-border/50'} focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-sm md:text-base`}
+                    placeholder="your@email.com"
+                    maxLength={255}
+                  />
+                  {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Phone</label>
+                  <input
+                    type="tel"
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className={`w-full px-4 py-3 rounded-xl bg-muted/50 border ${errors.phone ? 'border-destructive' : 'border-border/50'} focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-sm md:text-base`}
+                    placeholder="+91 1234567890"
+                    maxLength={20}
+                  />
+                  {errors.phone && <p className="text-destructive text-xs mt-1">{errors.phone}</p>}
+                </div>
               </div>
 
               <div>
