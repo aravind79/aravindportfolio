@@ -1,6 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
+
+const WHATSAPP_NUMBER = "917907021813";
+const WHATSAPP_MESSAGE = encodeURIComponent("Hi Aravind! I'd like to hire you for a project.");
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -39,6 +42,10 @@ export const Navigation = () => {
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleHireClick = () => {
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`, "_blank");
+  };
+
   return (
     <>
       <motion.nav
@@ -52,11 +59,11 @@ export const Navigation = () => {
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <motion.a
             href="#home"
-            className="font-display text-xl md:text-2xl font-bold gradient-text"
+            className="font-display text-lg md:text-2xl font-bold gradient-text"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            PORTFOLIO
+            ARAVIND
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -91,11 +98,13 @@ export const Navigation = () => {
 
           {/* Desktop CTA */}
           <motion.button
-            className="hidden md:block glass-card glow-border px-4 lg:px-6 py-2 rounded-full font-semibold text-sm tracking-wide hover-glow"
+            onClick={handleHireClick}
+            className="hidden md:flex items-center gap-2 bg-gradient-to-r from-primary to-accent text-primary-foreground px-4 lg:px-6 py-2 rounded-full font-semibold text-sm tracking-wide hover:opacity-90 transition-opacity"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="gradient-text">HIRE ME</span>
+            <MessageCircle className="w-4 h-4" />
+            <span>HIRE ME</span>
           </motion.button>
 
           {/* Mobile Menu Button */}
@@ -143,8 +152,10 @@ export const Navigation = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
-                className="w-full py-3 rounded-xl font-semibold text-center bg-gradient-to-r from-primary to-accent text-primary-foreground"
+                onClick={handleHireClick}
+                className="w-full py-3 rounded-xl font-semibold text-center bg-gradient-to-r from-primary to-accent text-primary-foreground flex items-center justify-center gap-2"
               >
+                <MessageCircle className="w-4 h-4" />
                 HIRE ME
               </motion.button>
             </div>

@@ -4,13 +4,20 @@ import { useRef, useState } from "react";
 const skills = [
   { name: "React", level: 95, category: "Frontend" },
   { name: "TypeScript", level: 90, category: "Frontend" },
-  { name: "Node.js", level: 85, category: "Backend" },
-  { name: "Python", level: 80, category: "Backend" },
-  { name: "UI/UX Design", level: 88, category: "Design" },
+  { name: "Tailwind CSS", level: 95, category: "Frontend" },
+  { name: "Vite", level: 88, category: "Frontend" },
+  { name: "Shadcn UI", level: 92, category: "Frontend" },
+  { name: "Framer Motion", level: 85, category: "Frontend" },
+  { name: "React Router", level: 90, category: "Frontend" },
+  { name: "TanStack Query", level: 85, category: "Backend" },
+  { name: "Supabase", level: 88, category: "Backend" },
+  { name: "Zod", level: 85, category: "Backend" },
+  { name: "React Hook Form", level: 90, category: "Backend" },
   { name: "Shopify", level: 92, category: "E-commerce" },
+  { name: "WordPress", level: 88, category: "E-commerce" },
 ];
 
-const categories = ["All", "Frontend", "Backend", "Design", "E-commerce"];
+const categories = ["All", "Frontend", "Backend", "E-commerce"];
 
 export const SkillsSection = () => {
   const ref = useRef<HTMLElement>(null);
@@ -68,13 +75,13 @@ export const SkillsSection = () => {
         </motion.div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
           {filteredSkills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
               layout
             >
               <motion.div
@@ -98,7 +105,7 @@ export const SkillsSection = () => {
                     }}
                     initial={{ width: 0 }}
                     animate={isInView ? { width: `${skill.level}%` } : {}}
-                    transition={{ duration: 1.2, delay: 0.5 + index * 0.1, ease: "easeOut" }}
+                    transition={{ duration: 1.2, delay: 0.5 + index * 0.05, ease: "easeOut" }}
                   />
                 </div>
 

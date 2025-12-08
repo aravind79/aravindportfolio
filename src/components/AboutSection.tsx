@@ -1,27 +1,42 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code2, Palette, Rocket, Sparkles } from "lucide-react";
+import { Briefcase, Code2, Rocket, Store } from "lucide-react";
 
 const features = [
   {
-    icon: Code2,
-    title: "Clean Code",
-    description: "Writing maintainable, scalable solutions",
+    icon: Briefcase,
+    title: "Business Analysis",
+    description: "Strategic insights & data-driven decisions",
   },
   {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Creating intuitive user experiences",
+    icon: Code2,
+    title: "SaaS Development",
+    description: "Custom software solutions that scale",
+  },
+  {
+    icon: Store,
+    title: "E-commerce",
+    description: "Shopify & WordPress stores that convert",
   },
   {
     icon: Rocket,
-    title: "Performance",
-    description: "Optimizing for speed and efficiency",
+    title: "Web Apps",
+    description: "Modern, fast & user-friendly applications",
+  },
+];
+
+const experience = [
+  {
+    role: "Business Analyst",
+    company: "GrowthPlug (acquired by PracticeTek)",
+    period: "2021 - Present",
+    description: "Driving growth through data analysis and strategic initiatives",
   },
   {
-    icon: Sparkles,
-    title: "Innovation",
-    description: "Embracing cutting-edge technologies",
+    role: "Freelance Developer",
+    company: "Self-Employed",
+    period: "2021 - Present",
+    description: "Web Development, SaaS, E-commerce (Shopify/WordPress)",
   },
 ];
 
@@ -49,10 +64,34 @@ export const AboutSection = () => {
             Passion for <span className="gradient-text text-glow">Excellence</span>
           </h2>
           <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4">
-            I'm a creative developer passionate about building exceptional digital
-            experiences. With expertise in modern web technologies, I transform
-            ideas into reality.
+            I'm Aravind B Nair, a Business Analyst & Full-Stack Developer based in Trivandrum.
+            I transform complex business challenges into elegant digital solutions.
           </p>
+        </motion.div>
+
+        {/* Experience Timeline */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-12 md:mb-16"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+            {experience.map((exp, index) => (
+              <motion.div
+                key={exp.role}
+                initial={{ opacity: 0, x: index === 0 ? -40 : 40 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                className="glass-card glow-border rounded-2xl p-6 md:p-8"
+              >
+                <span className="text-xs md:text-sm text-primary font-medium">{exp.period}</span>
+                <h3 className="font-display text-lg md:text-xl font-bold mt-2 mb-1">{exp.role}</h3>
+                <p className="text-sm md:text-base text-muted-foreground mb-2">{exp.company}</p>
+                <p className="text-sm text-muted-foreground/80">{exp.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -61,7 +100,7 @@ export const AboutSection = () => {
               key={feature.title}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
             >
               <motion.div
                 className="glass-card glow-border rounded-2xl p-6 md:p-8 h-full hover-glow group cursor-pointer"
@@ -91,7 +130,7 @@ export const AboutSection = () => {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
-              { value: "5+", label: "Years Experience" },
+              { value: "4+", label: "Years Experience" },
               { value: "50+", label: "Projects Completed" },
               { value: "30+", label: "Happy Clients" },
               { value: "10+", label: "Technologies" },

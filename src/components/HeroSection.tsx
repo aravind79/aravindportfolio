@@ -1,7 +1,10 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import profileImage from "@/assets/profile.jpeg";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Linkedin, Mail, MessageCircle } from "lucide-react";
+
+const WHATSAPP_NUMBER = "917907021813";
+const WHATSAPP_MESSAGE = encodeURIComponent("Hi Aravind! I'd like to discuss a project with you.");
 
 export const HeroSection = () => {
   const ref = useRef<HTMLElement>(null);
@@ -50,9 +53,9 @@ export const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              <span className="text-foreground">CREATIVE</span>
+              <span className="text-foreground">ARAVIND</span>
               <br />
-              <span className="gradient-text text-glow">DEVELOPER</span>
+              <span className="gradient-text text-glow">B NAIR</span>
             </motion.h1>
 
             <motion.p
@@ -61,8 +64,8 @@ export const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              Crafting immersive digital experiences through innovative design
-              and cutting-edge technology
+              Business Analyst & Full-Stack Developer crafting SaaS solutions, 
+              E-commerce stores, and innovative web applications
             </motion.p>
 
             <motion.div
@@ -72,13 +75,15 @@ export const HeroSection = () => {
               transition={{ delay: 0.7 }}
             >
               {[
-                { icon: Github, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Mail, href: "#contact" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/aravind-b-nair-135820196/", external: true },
+                { icon: MessageCircle, href: `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`, external: true },
+                { icon: Mail, href: "mailto:bizbyaravind@gmail.com", external: false },
               ].map((social, index) => (
                 <motion.a
                   key={index}
                   href={social.href}
+                  target={social.external ? "_blank" : undefined}
+                  rel={social.external ? "noopener noreferrer" : undefined}
                   className="glass-card glow-border w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover-glow"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
@@ -144,7 +149,7 @@ export const HeroSection = () => {
               <div className="w-48 h-48 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden glow-border glass-card p-1.5 md:p-2">
                 <img
                   src={profileImage}
-                  alt="Profile"
+                  alt="Aravind B Nair - Full Stack Developer"
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>
@@ -155,7 +160,7 @@ export const HeroSection = () => {
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                <span className="font-display text-xs md:text-sm font-bold gradient-text">5+ Years</span>
+                <span className="font-display text-xs md:text-sm font-bold gradient-text">4+ Years</span>
               </motion.div>
 
               <motion.div
