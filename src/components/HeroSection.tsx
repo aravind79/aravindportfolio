@@ -18,16 +18,16 @@ export const HeroSection = () => {
     <section
       id="home"
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0"
     >
       <motion.div
         style={{ y, opacity, scale }}
-        className="container mx-auto px-6 z-10"
+        className="container mx-auto px-4 md:px-6 z-10"
       >
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12">
           {/* Text Content */}
           <motion.div
-            className="flex-1 text-center lg:text-left"
+            className="flex-1 text-center lg:text-left order-2 lg:order-1"
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -36,16 +36,16 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 glass-card glow-border px-4 py-2 rounded-full mb-6"
+              className="inline-flex items-center gap-2 glass-card glow-border px-3 md:px-4 py-2 rounded-full mb-4 md:mb-6"
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm font-medium text-muted-foreground">
+              <span className="text-xs md:text-sm font-medium text-muted-foreground">
                 Available for work
               </span>
             </motion.div>
 
             <motion.h1
-              className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6"
+              className="font-display text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4 md:mb-6"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -56,7 +56,7 @@ export const HeroSection = () => {
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
+              className="text-base md:text-xl lg:text-2xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-6 md:mb-8 leading-relaxed px-4 md:px-0"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
@@ -66,7 +66,7 @@ export const HeroSection = () => {
             </motion.p>
 
             <motion.div
-              className="flex items-center gap-4 justify-center lg:justify-start mb-12"
+              className="flex items-center gap-3 md:gap-4 justify-center lg:justify-start mb-8 md:mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
@@ -79,11 +79,11 @@ export const HeroSection = () => {
                 <motion.a
                   key={index}
                   href={social.href}
-                  className="glass-card glow-border w-12 h-12 rounded-full flex items-center justify-center hover-glow"
+                  className="glass-card glow-border w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover-glow"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <social.icon className="w-5 h-5 text-primary" />
+                  <social.icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
                 </motion.a>
               ))}
             </motion.div>
@@ -107,7 +107,7 @@ export const HeroSection = () => {
 
           {/* Profile Image */}
           <motion.div
-            className="relative flex-1 flex justify-center"
+            className="relative flex-1 flex justify-center order-1 lg:order-2"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
@@ -119,8 +119,8 @@ export const HeroSection = () => {
                   key={ring}
                   className="absolute rounded-full border border-primary/20"
                   style={{
-                    width: 300 + ring * 60,
-                    height: 300 + ring * 60,
+                    width: `${180 + ring * 40}px`,
+                    height: `${180 + ring * 40}px`,
                   }}
                   animate={{ rotate: ring % 2 === 0 ? 360 : -360 }}
                   transition={{
@@ -133,15 +133,15 @@ export const HeroSection = () => {
             </div>
 
             {/* Glow effect */}
-            <div className="absolute w-80 h-80 bg-primary/20 rounded-full blur-3xl" />
-            <div className="absolute w-60 h-60 bg-accent/20 rounded-full blur-2xl translate-x-10 translate-y-10" />
+            <div className="absolute w-48 md:w-80 h-48 md:h-80 bg-primary/20 rounded-full blur-3xl" />
+            <div className="absolute w-36 md:w-60 h-36 md:h-60 bg-accent/20 rounded-full blur-2xl translate-x-6 md:translate-x-10 translate-y-6 md:translate-y-10" />
 
             {/* Image container */}
             <motion.div
               className="relative z-10 floating"
               whileHover={{ scale: 1.02 }}
             >
-              <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden glow-border glass-card p-2">
+              <div className="w-48 h-48 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden glow-border glass-card p-1.5 md:p-2">
                 <img
                   src={profileImage}
                   alt="Profile"
@@ -151,19 +151,19 @@ export const HeroSection = () => {
 
               {/* Floating badges */}
               <motion.div
-                className="absolute -top-4 -right-4 glass-card glow-border px-4 py-2 rounded-full"
+                className="absolute -top-2 -right-2 md:-top-4 md:-right-4 glass-card glow-border px-3 md:px-4 py-1.5 md:py-2 rounded-full"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                <span className="font-display text-sm font-bold gradient-text">5+ Years</span>
+                <span className="font-display text-xs md:text-sm font-bold gradient-text">5+ Years</span>
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-4 -left-4 glass-card glow-border px-4 py-2 rounded-full"
+                className="absolute -bottom-2 -left-2 md:-bottom-4 md:-left-4 glass-card glow-border px-3 md:px-4 py-1.5 md:py-2 rounded-full"
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
               >
-                <span className="font-display text-sm font-bold gradient-text">50+ Projects</span>
+                <span className="font-display text-xs md:text-sm font-bold gradient-text">50+ Projects</span>
               </motion.div>
             </motion.div>
           </motion.div>
