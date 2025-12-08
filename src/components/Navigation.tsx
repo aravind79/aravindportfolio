@@ -63,7 +63,7 @@ export const Navigation = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            ARAVIND
+            Portfolio
           </motion.a>
 
           {/* Desktop Navigation */}
