@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Linkedin, Mail, MessageCircle } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socials = [
-    { icon: Github, href: "#" },
-    { icon: Linkedin, href: "#" },
-    { icon: Twitter, href: "#" },
-    { icon: Mail, href: "#contact" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/aravind-b-nair-135820196/" },
+    { icon: MessageCircle, href: "https://wa.me/917907021813" },
+    { icon: Mail, href: "mailto:bizbyaravind@gmail.com" },
   ];
 
   return (
