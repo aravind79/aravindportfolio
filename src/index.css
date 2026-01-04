@@ -199,3 +199,16 @@
     transform: translateY(50px);
   }
 }
+
+/* Print styles for PDF generation */
+@media print {
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}

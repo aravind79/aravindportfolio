@@ -1,13 +1,15 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import profileImage from "@/assets/profile.jpeg";
-import { ArrowDown, Linkedin, Mail, MessageCircle } from "lucide-react";
+import { ArrowDown, FileDown, Linkedin, Loader2, Mail, MessageCircle } from "lucide-react";
+import { generateResumePDF } from "@/utils/generateResumePDF";
 
 const WHATSAPP_NUMBER = "917907021813";
 const WHATSAPP_MESSAGE = encodeURIComponent("Hi Aravind! I'd like to discuss a project with you.");
 
 export const HeroSection = () => {
   const ref = useRef<HTMLElement>(null);
+  const [isGenerating, setIsGenerating] = useState(false);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -16,6 +18,17 @@ export const HeroSection = () => {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
+
+  const handleDownloadResume = async () => {
+    setIsGenerating(true);
+    try {
+      await generateResumePDF();
+    } catch (error) {
+      console.error("Failed to generate PDF:", error);
+    } finally {
+      setIsGenerating(false);
+    }
+  };
 
   return (
     <section
@@ -91,6 +104,24 @@ export const HeroSection = () => {
                   <social.icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
                 </motion.a>
               ))}
+
+              {/* Download Resume Button */}
+              <motion.button
+                onClick={handleDownloadResume}
+                disabled={isGenerating}
+                className="glass-card glow-border px-4 md:px-5 py-2.5 md:py-3 rounded-full flex items-center gap-2 hover-glow disabled:opacity-70 disabled:cursor-not-allowed"
+                whileHover={{ scale: isGenerating ? 1 : 1.05 }}
+                whileTap={{ scale: isGenerating ? 1 : 0.95 }}
+              >
+                {isGenerating ? (
+                  <Loader2 className="w-4 h-4 md:w-5 md:h-5 text-primary animate-spin" />
+                ) : (
+                  <FileDown className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+                )}
+                <span className="text-xs md:text-sm font-medium text-foreground">
+                  {isGenerating ? "Generating..." : "Resume"}
+                </span>
+              </motion.button>
             </motion.div>
 
             <motion.a
