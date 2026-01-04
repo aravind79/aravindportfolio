@@ -66,9 +66,9 @@ export const resumeData = {
 
   skills: {
     frontend: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion"],
-    backend: ["Node.js", "Express", "Supabase", "PostgreSQL", "REST APIs"],
+    backend: ["Node.js", "Express", "PHP Laravel", "Supabase", "PostgreSQL", "REST APIs"],
     ecommerce: ["Shopify", "WordPress", "WooCommerce", "Payment Integration"],
-    tools: ["Git", "Figma", "Jira", "VS Code", "Vercel"],
+    tools: ["Git", "Jira", "VS Code", "Vercel"],
   },
 
   competencies: [
