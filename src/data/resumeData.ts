@@ -68,6 +68,7 @@ export const resumeData = {
     frontend: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion"],
     backend: ["Node.js", "Express", "PHP Laravel", "Supabase", "PostgreSQL", "REST APIs"],
     ecommerce: ["Shopify", "WordPress", "WooCommerce", "Payment Integration"],
+    marketing: ["Digital Marketing", "Meta Ads", "Google Ads", "SEO"],
     tools: ["Git", "Jira", "VS Code", "Vercel"],
   },
 
