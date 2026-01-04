@@ -172,6 +172,10 @@ export const ResumeDocument = () => {
               <strong style={{ color: "#1a1a1a" }}>E-commerce:</strong>{" "}
               <span style={{ color: "#333333" }}>{skills.ecommerce.join(", ")}</span>
             </p>
+            <p style={{ margin: "0 0 5px 0" }}>
+              <strong style={{ color: "#1a1a1a" }}>Marketing:</strong>{" "}
+              <span style={{ color: "#333333" }}>{skills.marketing.join(", ")}</span>
+            </p>
             <p style={{ margin: 0 }}>
               <strong style={{ color: "#1a1a1a" }}>Tools:</strong>{" "}
               <span style={{ color: "#333333" }}>{skills.tools.join(", ")}</span>
