@@ -10,6 +10,7 @@ const skills = [
   { name: "React Router", level: 90, category: "Frontend" },
   { name: "Supabase", level: 90, category: "Backend" },
   { name: "Node.js", level: 88, category: "Backend" },
+  { name: "PHP Laravel", level: 85, category: "Backend" },
   { name: "TanStack Query", level: 85, category: "Backend" },
   { name: "Zod", level: 85, category: "Backend" },
   { name: "React Hook Form", level: 90, category: "Backend" },
