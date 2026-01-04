@@ -16,9 +16,11 @@ const skills = [
   { name: "React Hook Form", level: 90, category: "Backend" },
   { name: "Shopify", level: 92, category: "E-commerce" },
   { name: "WordPress", level: 88, category: "E-commerce" },
+  { name: "Meta Ads", level: 85, category: "Marketing" },
+  { name: "Digital Marketing", level: 82, category: "Marketing" },
 ];
 
-const categories = ["All", "Frontend", "Backend", "E-commerce"];
+const categories = ["All", "Frontend", "Backend", "E-commerce", "Marketing"];
 
 export const SkillsSection = () => {
   const ref = useRef<HTMLElement>(null);
