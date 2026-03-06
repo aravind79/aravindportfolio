@@ -35,7 +35,7 @@ const experience = [
   {
     role: "Freelance Developer",
     company: "Self-Employed",
-    period: "2021 - 2026",
+    period: "2021 - Present",
     description: "Web Development, SaaS, E-commerce (Shopify/WordPress)",
   },
 ];
