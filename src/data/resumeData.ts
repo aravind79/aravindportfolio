@@ -16,7 +16,7 @@ export const resumeData = {
     {
       title: "Business Analyst",
       company: "GrowthPlug (acquired by PracticeTek)",
-      period: "2021 - Present",
+      period: "2021 - 2026",
       highlights: [
         "Lead requirement gathering and analysis for SaaS platform features serving healthcare practices",
         "Collaborate with cross-functional teams to define product roadmaps and prioritize feature development",
