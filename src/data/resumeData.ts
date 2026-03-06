@@ -27,7 +27,7 @@ export const resumeData = {
     {
       title: "Freelance Full-Stack Developer",
       company: "Self-Employed",
-      period: "2021 - Present",
+      period: "2021 - 2026",
       highlights: [
         "Delivered 50+ web applications, SaaS platforms, and E-commerce solutions for clients worldwide",
         "Specialized in React, TypeScript, Node.js, and Shopify/WordPress development",
