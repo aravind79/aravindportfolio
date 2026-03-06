@@ -29,7 +29,7 @@ const experience = [
   {
     role: "Business Analyst",
     company: "GrowthPlug (acquired by PracticeTek)",
-    period: "2021 - Present",
+    period: "2021 - 2026",
     description: "Driving growth through data analysis and strategic initiatives",
   },
   {
