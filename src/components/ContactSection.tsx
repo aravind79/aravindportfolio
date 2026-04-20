@@ -127,10 +127,12 @@ Message: ${formData.message}`;
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full py-5 rounded-2xl bg-gradient-to-r from-[#b062ff] via-[#fd7969] to-[#ffa858] text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3"
+              className="w-full py-5 rounded-full bg-gradient-to-r from-[#b062ff] via-[#fd7969] to-[#ffa858] text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3"
             >
-              SEND MESSAGE TO WHATSAPP
-              <Send className="w-5 h-5" />
+              <span className="flex items-center justify-center gap-3">
+                SEND MESSAGE
+                <Send className="w-5 h-5" />
+              </span>
             </motion.button>
           </form>
         </motion.div>

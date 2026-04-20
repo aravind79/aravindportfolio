@@ -144,7 +144,7 @@ export const Navigation = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
                 onClick={handleHireClick}
-                className="w-full py-3 rounded-xl font-semibold text-center bg-gradient-to-r from-primary to-accent text-primary-foreground flex items-center justify-center gap-2"
+                className="w-full py-3 rounded-full font-semibold text-center bg-gradient-to-r from-[#b062ff] via-[#fd7969] to-[#ffa858] text-white flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4" />
                 HIRE ME
