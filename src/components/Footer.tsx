@@ -1,4 +1,4 @@
-import { Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin, Mail } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -10,6 +10,10 @@ export const Footer = () => {
             <h2 className="text-2xl font-bold font-display text-gray-900">
               Portfolio
             </h2>
+            <div className="mt-4 flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors group">
+              <Mail className="w-4 h-4 text-[#fd7969]" />
+              <a href="mailto:bizbyaravind@gmail.com" className="text-sm font-medium">bizbyaravind@gmail.com</a>
+            </div>
           </div>
 
           <div className="flex flex-col items-start md:items-end gap-8">
@@ -26,11 +30,22 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full flex items-center justify-center relative group"
+                title="LinkedIn"
               >
                 <div className="absolute inset-0 rounded-full p-[1.5px] bg-gradient-to-br from-[#b062ff] via-[#fd7969] to-[#ffa858] mask-border">
                   <div className="bg-[#F1EFF0] w-full h-full rounded-full"></div>
                 </div>
                 <Linkedin className="w-4 h-4 text-gray-700 z-10 group-hover:text-[#fd7969] transition-colors" />
+              </a>
+              <a 
+                href="mailto:bizbyaravind@gmail.com" 
+                className="w-10 h-10 rounded-full flex items-center justify-center relative group"
+                title="Email Me"
+              >
+                <div className="absolute inset-0 rounded-full p-[1.5px] bg-gradient-to-br from-[#b062ff] via-[#fd7969] to-[#ffa858] mask-border">
+                  <div className="bg-[#F1EFF0] w-full h-full rounded-full"></div>
+                </div>
+                <Mail className="w-4 h-4 text-gray-700 z-10 group-hover:text-[#fd7969] transition-colors" />
               </a>
               <a 
                 href="https://www.instagram.com/bizbyaravind?igsh=ZWRja3U0bWJvdXNo" 
