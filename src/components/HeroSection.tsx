@@ -6,73 +6,63 @@ const WHATSAPP_MESSAGE = encodeURIComponent("Hi Aravind! I'd like to discuss a p
 
 export const HeroSection = () => {
   return (
-    <section
-      id="home"
-      className="relative min-h-[80vh] flex items-center justify-center pt-20 md:pt-24 pb-10"
-    >
-      <div className="container mx-auto px-4 md:px-6 z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
-          {/* Text Content */}
+    <section id="home" className="relative min-h-screen pt-32 pb-20 overflow-hidden bg-[#F1EFF0]">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
           <motion.div
-            className="flex-1 text-center lg:text-left order-2 lg:order-1 max-w-3xl"
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            className="order-2 lg:order-1"
           >
-            <motion.h1
-              className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.2] mb-4 tracking-tight text-[#111]"
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
+              transition={{ delay: 0.2 }}
+              className="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-[#b062ff]/10 via-[#fd7969]/10 to-[#ffa858]/10 border border-[#fd7969]/20 mb-6"
             >
-              Hello, <span className="gradient-text">I'm Aravind,</span>
-              <br />
-              I build systems
-              <br />
-              that help businesses scale.
+              <span className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#b062ff] via-[#fd7969] to-[#ffa858] tracking-wider uppercase">
+                Expert Developer & Automation Specialist
+              </span>
+            </motion.div>
+
+            <motion.h1
+              className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.2] mb-4 tracking-tight text-[#111]"
+            >
+              Hello, I'm <span className="gradient-text">Aravind</span>. I build Scalable <span className="italic font-normal">Digital Products</span> that grow your business.
             </motion.h1>
 
             <motion.p
-              className="text-sm md:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-gray-600 text-base md:text-lg mb-10 max-w-xl leading-relaxed"
             >
-              I specialize in web development, app development, WhatsApp automation, and rapid MVP launches helping startups and businesses move faster with reliable, conversion-focused technology.
+              I help startups and businesses scale through high-performance <span className="font-semibold text-gray-900">Web & App Development</span>, <span className="font-semibold text-gray-900">WhatsApp Automation</span>, and <span className="font-semibold text-gray-900">Rapid MVP</span> launches. 
             </motion.p>
 
-            <motion.div
-              className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-            >
+            <div className="flex flex-col sm:flex-row items-center gap-6">
               <motion.a
                 href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-sm tracking-wider bg-gradient-to-r from-[#b062ff] via-[#fd7969] to-[#ffa858] text-white shadow-lg hover:shadow-xl transition-shadow text-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto px-10 py-4 rounded-full bg-gradient-to-r from-[#b062ff] via-[#fd7969] to-[#ffa858] text-white font-bold text-lg shadow-[0_10px_30px_-10px_rgba(253,121,105,0.4)] hover:shadow-[0_15px_35px_-10px_rgba(253,121,105,0.6)] transition-all flex items-center justify-center gap-2"
               >
-                GET IN TOUCH
+                Let's Talk
               </motion.a>
-              
               <motion.a
                 href="#work"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-sm tracking-wider border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-colors text-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto px-10 py-4 rounded-full border-2 border-gray-900 text-gray-900 font-bold text-lg hover:bg-gray-900 hover:text-white transition-all text-center"
               >
-                VIEW ALL WORKS
+                View Works
               </motion.a>
-            </motion.div>
+            </div>
           </motion.div>
 
-          {/* Profile Image */}
           <motion.div
-            className="flex-1 flex justify-center lg:justify-end order-1 lg:order-2 w-full max-w-md lg:max-w-none"
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
           >
@@ -84,9 +74,9 @@ export const HeroSection = () => {
               />
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
   );
 };
-
