@@ -6,15 +6,15 @@ const WHATSAPP_MESSAGE = encodeURIComponent("Hi Aravind! I'd like to discuss a p
 
 export const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen pt-32 pb-20 overflow-hidden bg-[#F1EFF0]">
+    <section id="home" className="relative min-h-screen pt-32 pb-20 overflow-hidden bg-[#F1EFF0] flex items-center">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24">
           
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="order-2 lg:order-1"
+            className="order-2 lg:order-1 max-w-2xl"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -65,7 +65,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-            className="order-1 lg:order-2"
+            className="order-1 lg:order-2 flex-shrink-0"
           >
             <div className="relative w-full max-w-[500px] flex items-center justify-center">
               <img 
