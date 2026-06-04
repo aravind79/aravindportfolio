@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroImage from "@/assets/Gemini_Generated_Image_zyfm0zyfm0zyfm0z (1).png";
+import heroImage from "@/assets/image.jpg";
 
 const WHATSAPP_NUMBER = "917907021813";
 const WHATSAPP_MESSAGE = encodeURIComponent("Hi Aravind! I'd like to discuss a project with you.");
